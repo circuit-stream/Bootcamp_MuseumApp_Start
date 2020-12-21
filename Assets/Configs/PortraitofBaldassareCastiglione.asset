@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fe6c68fc024c40a55e50aa47aa3f17, type: 3}
+  m_Name: PortraitofBaldassareCastiglione
+  m_EditorClassIdentifier: 
+  id: portraitofbaldassarecastiglione
+  title: Portrait of Baldassare Castiglione
+  author: Raphael
+  description: "Portrait of Baldassare Castiglione is a c. 1514\u20131515 oil painting
+    attributed to the Italian High Renaissance painter Raphael. Considered one of
+    the great portraits of the Renaissance, it has an enduring influence. It depicts
+    Raphael's friend, the diplomat and humanist Baldassare Castiglione, who is considered
+    a quintessential example of the High Renaissance gentleman."
+  location: Louvre, Paris
+  image: {fileID: 21300000, guid: 627ca23b26db3294abb418c5a0cf54f7, type: 3}
+  thumbnailSize: {x: 400, y: 400}
+  thumbnailPosition: {x: 0, y: 0, z: 0}
+  headerImageSize: {x: 1300, y: 1500}
+  headerImagePosition: {x: 0, y: 0, z: 0}

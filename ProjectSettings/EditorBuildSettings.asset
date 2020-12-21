@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AttractionScreen.unity
-    guid: cc674ad0a6a6cc542b8edc334c7fbfe4
-  - enabled: 1
     path: Assets/Scenes/HomeScreen.unity
     guid: f1f0afaf6f1f56d468d7a40b33fcafae
+  - enabled: 1
+    path: Assets/Scenes/AttractionScreen.unity
+    guid: cc674ad0a6a6cc542b8edc334c7fbfe4
   - enabled: 1
     path: Assets/Scenes/SignupPopup.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

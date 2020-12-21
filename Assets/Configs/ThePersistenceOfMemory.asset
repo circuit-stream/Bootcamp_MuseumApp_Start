@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9fe6c68fc024c40a55e50aa47aa3f17, type: 3}
-  m_Name: Dali
+  m_Name: ThePersistenceOfMemory
   m_EditorClassIdentifier: 
   id: persistenceofmemory
   title: The Persistence of Memory

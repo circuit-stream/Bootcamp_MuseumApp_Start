@@ -969,8 +969,15 @@ MonoBehaviour:
   attractionPrefab: {fileID: 4757209673584562194, guid: 6ca7655d286ecfd4fa9fb3f5c7c1e4d6,
     type: 3}
   attractions:
-  - {fileID: 11400000, guid: fa37dbc519514704094eca3ae254b83a, type: 2}
+  - {fileID: 11400000, guid: 24ad0fd5ce9b62b45883578bdb321ec3, type: 2}
   - {fileID: 11400000, guid: 610dbf5a20661b6498a532050f97e652, type: 2}
+  - {fileID: 11400000, guid: 62727bd9682fd734bbef557a29a8de4a, type: 2}
+  - {fileID: 11400000, guid: 79d6a23a6bca7d34f813bf0cd6a6dabb, type: 2}
+  - {fileID: 11400000, guid: fa37dbc519514704094eca3ae254b83a, type: 2}
+  - {fileID: 11400000, guid: c7f2db36c8b85534b860152a27457495, type: 2}
+  - {fileID: 11400000, guid: cefd7fc733e2182419c0461c8604066b, type: 2}
+  - {fileID: 11400000, guid: 5ab22357c81b5e54a81751ac1a76b3ba, type: 2}
+  - {fileID: 11400000, guid: 6b380dcc0ad096441a5963f53f7cfb27, type: 2}
 --- !u!1 &1465556837
 GameObject:
   m_ObjectHideFlags: 0

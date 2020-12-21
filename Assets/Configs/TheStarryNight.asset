@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fe6c68fc024c40a55e50aa47aa3f17, type: 3}
+  m_Name: TheStarryNight
+  m_EditorClassIdentifier: 
+  id: thestarrynight
+  title: The Starry Night
+  author: Vincent van Gogh
+  description: "The Starry Night is an oil on canvas painting by Dutch Post-Impressionist
+    painter Vincent van Gogh. Painted in June 1889, it depicts the view from the
+    east-facing window of his asylum room at Saint-R\xE9my-de-Provence, just before
+    sunrise, with the addition of an imaginary village. It has been in the permanent
+    collection of the Museum of Modern Art in New York City since 1941, acquired
+    through the Lillie P. Bliss Bequest. Widely regarded as Van Gogh's magnum opus,
+    The Starry Night is one of the most recognized paintings in Western art."
+  location: Louvre, Paris
+  image: {fileID: 21300000, guid: c37f6b1aeaee0b64aa3be1276d67b9bc, type: 3}
+  thumbnailSize: {x: 600, y: 400}
+  thumbnailPosition: {x: 60, y: 60, z: 0}
+  headerImageSize: {x: 1300, y: 1200}
+  headerImagePosition: {x: -50, y: 0, z: 0}
