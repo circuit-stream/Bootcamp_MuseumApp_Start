@@ -14,6 +14,7 @@ namespace MuseumApp
 
         public AttractionEntryGraphics attractionPrefab;
         public List<AttractionConfig> attractions;
+        public List<AttractionEntryGraphics> attractionEntries;
 
         public void Signup()
         {
@@ -22,36 +23,48 @@ namespace MuseumApp
 
         public void LogOff()
         {
-            PlayerPrefs.DeleteKey(PlayerData.playerDataSaveKey);
+            // TODO: LogOff
+
+            Refresh();
+        }
+
+        public void Refresh()
+        {
             SetupUsername();
+
+            foreach (var attraction in attractionEntries)
+                attraction.Refresh();
         }
 
         private void Awake()
         {
+            attractionEntries = new List<AttractionEntryGraphics>(attractions.Count);
             foreach (var attraction in attractions)
             {
                 var newAttraction = Instantiate(attractionPrefab, attractionEntriesParent);
                 newAttraction.Setup(attraction);
+                attractionEntries.Add(newAttraction);
             }
 
             SetupUsername();
         }
 
-        public void SetupUsername()
+        private void SetupUsername()
         {
-            if (!PlayerPrefs.HasKey(PlayerData.playerDataSaveKey))
+            // TODO
+            bool isLoggedIn = true;
+
+            if (!isLoggedIn)
             {
                 loginButton.SetActive(true);
                 username.gameObject.SetActive(false);
                 return;
             }
 
-            var playerData = JsonUtility.FromJson<PlayerData>(PlayerPrefs.GetString(PlayerData.playerDataSaveKey));
-
             loginButton.SetActive(false);
             username.gameObject.SetActive(true);
 
-            username.text = playerData.username;
+            // TODO: username.text = <NAME>;
         }
     }
 }

@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1163373332}
         m_TargetAssemblyTypeName: MuseumApp.SignupPopup, Assembly-CSharp
-        m_MethodName: Login
+        m_MethodName: OnLoginClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2088,8 +2088,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1163373332}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Register
+        m_TargetAssemblyTypeName: MuseumApp.SignupPopup, Assembly-CSharp
+        m_MethodName: OnRegisterClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

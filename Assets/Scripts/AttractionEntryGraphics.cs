@@ -34,7 +34,13 @@ namespace MuseumApp
             attractionLocation.text = attractionConfig.location;
 
             SetupThumbnail();
-            SetupStars(PlayerPrefs.GetInt(attractionConfig.id));
+
+            // TODO: StarsRatingLib.SetupStars
+        }
+
+        public void Refresh()
+        {
+            // TODO: StarsRatingLib.SetupStars
         }
 
         private void SetupThumbnail()

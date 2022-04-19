@@ -27,8 +27,10 @@ namespace MuseumApp
 
         public void OnClickStar(int index)
         {
-            PlayerPrefs.SetInt(attractionParameters.attractionConfig.id, index);
-            SetupStars(index);
+            // TODO: Check if user is logged in
+            // TODO: Create save user rating
+
+            StarsRatingLib.SetupStars(stars, index, true);
         }
 
         private void Start()
@@ -42,7 +44,8 @@ namespace MuseumApp
             attractionDescription.text = attractionConfig.description;
 
             SetupCover(attractionConfig);
-            SetupStars(PlayerPrefs.GetInt(attractionConfig.id));
+
+            // TODO: StarsRatingLib.SetupStars
         }
 
         private void SetupCover(AttractionConfig attractionConfig)

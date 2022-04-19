@@ -7,7 +7,7 @@ namespace MuseumApp
 {
     public class SignupPopup : MonoBehaviour
     {
-        private static readonly int Exit = Animator.StringToHash("Exit");
+        private static readonly int ExitHash = Animator.StringToHash("Exit");
 
         public TMP_InputField usernameInput;
         public int minUsernameCharacters = 3;
@@ -21,7 +21,7 @@ namespace MuseumApp
 
         public Animator animator;
 
-        public void Register()
+        public void OnRegisterClicked()
         {
             var usernameValid = IsInputValid(usernameInput, minUsernameCharacters);
             var passwordValid = IsInputValid(passwordInput, minPasswordCharacters);
@@ -32,22 +32,29 @@ namespace MuseumApp
             if (!usernameValid || !passwordValid)
                 return;
 
-            var playerData = new PlayerData
-            {
-                username = usernameInput.text,
-                password = passwordInput.text
-            };
+            // TODO: Register player
 
-            PlayerPrefs.SetString(PlayerData.playerDataSaveKey, JsonUtility.ToJson(playerData));
-
-            animator.SetTrigger(Exit);
-
-            FindObjectOfType<HomeScreen>().SetupUsername();
+            Login();
+            ClosePopup();
         }
 
-        public void Login()
+        public void OnLoginClicked()
+        {
+            // TODO: Check credentials
+
+            Login();
+            ClosePopup();
+        }
+
+        private void Login()
         {
             // TODO
+        }
+
+        private void ClosePopup()
+        {
+            animator.SetTrigger(ExitHash);
+            FindObjectOfType<HomeScreen>().Refresh();
         }
 
         private void OnFinishedExitAnimation()
