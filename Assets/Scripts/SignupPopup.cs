@@ -21,7 +21,7 @@ namespace MuseumApp
 
         public Animator animator;
 
-        public void Submit()
+        public void Register()
         {
             var usernameValid = IsInputValid(usernameInput, minUsernameCharacters);
             var passwordValid = IsInputValid(passwordInput, minPasswordCharacters);
@@ -43,6 +43,11 @@ namespace MuseumApp
             animator.SetTrigger(Exit);
 
             FindObjectOfType<HomeScreen>().SetupUsername();
+        }
+
+        public void Login()
+        {
+            // TODO
         }
 
         private void OnFinishedExitAnimation()

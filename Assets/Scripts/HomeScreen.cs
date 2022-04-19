@@ -20,6 +20,12 @@ namespace MuseumApp
             SceneManager.LoadScene("SignupPopup", LoadSceneMode.Additive);
         }
 
+        public void LogOff()
+        {
+            PlayerPrefs.DeleteKey(PlayerData.playerDataSaveKey);
+            SetupUsername();
+        }
+
         private void Awake()
         {
             foreach (var attraction in attractions)
