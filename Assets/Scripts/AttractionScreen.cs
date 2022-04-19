@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,9 +14,7 @@ namespace MuseumApp
         public TMP_Text attractionAuthor;
         public TMP_Text attractionDescription;
 
-        public List<Image> stars;
-        public Color activeStarColor = new Color(1, 0.75f, 0);
-        public Color inactiveStarColor = new Color(0.78f, 0.78f, 0.78f);
+        public Image[] stars;
 
         private AttractionScreenParameters attractionParameters;
 
@@ -55,14 +52,6 @@ namespace MuseumApp
             var rectTransform = cover.GetComponent<RectTransform>();
             rectTransform.anchoredPosition3D = attractionConfig.headerImagePosition;
             rectTransform.sizeDelta = attractionConfig.headerImageSize;
-        }
-
-        private void SetupStars(int activeStarsCount)
-        {
-            for (int i = 0; i < stars.Count; i++)
-            {
-                stars[i].color = i < activeStarsCount ? activeStarColor : inactiveStarColor;
-            }
         }
     }
 }
