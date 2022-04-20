@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,16 +10,27 @@ namespace MuseumApp
 {
     public class AttractionScreen : MonoBehaviour
     {
+        [Serializable]
+        public class WeatherIconEquivalency
+        {
+            public Sprite icon;
+            public string iconId;
+        }
+
         public Image cover;
 
         public TMP_Text attractionTitle;
         public TMP_Text attractionLocation;
         public TMP_Text attractionAuthor;
         public TMP_Text attractionDescription;
+        public Image weatherIconImage;
+
+        public List<WeatherIconEquivalency> weatherIcons;
 
         public Image[] stars;
 
         private AttractionScreenParameters attractionParameters;
+        private AttractionConfig attractionConfig;
 
         public void OnClickBack()
         {
@@ -36,19 +50,19 @@ namespace MuseumApp
         private void Start()
         {
             attractionParameters = FindObjectOfType<AttractionScreenParameters>();
-            var attractionConfig = attractionParameters.attractionConfig;
+            attractionConfig = attractionParameters.attractionConfig;
 
             attractionTitle.text = attractionConfig.title;
             attractionLocation.text = attractionConfig.location;
             attractionAuthor.text = attractionConfig.author;
             attractionDescription.text = attractionConfig.description;
 
-            SetupCover(attractionConfig);
+            SetupCover();
 
             // TODO: StarsRatingLib.SetupStars
         }
 
-        private void SetupCover(AttractionConfig attractionConfig)
+        private void SetupCover()
         {
             cover.sprite = attractionConfig.image;
 
