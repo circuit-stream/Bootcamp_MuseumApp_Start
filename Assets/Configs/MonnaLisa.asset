@@ -22,6 +22,8 @@ MonoBehaviour:
     painting's novel qualities include the subject's enigmatic expression, the monumentality
     of the composition, the subtle modelling of forms, and the atmospheric illusionism.
   location: Louvre, Paris
+  latitude: 48.86315
+  longitude: 2.329294
   image: {fileID: 21300000, guid: fb7060af7318a9c40b4041d65e1eb060, type: 3}
   thumbnailSize: {x: 420, y: 420}
   thumbnailPosition: {x: 0, y: 20, z: 0}

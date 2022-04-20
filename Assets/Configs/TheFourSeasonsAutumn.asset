@@ -22,6 +22,8 @@ MonoBehaviour:
     season. The set was accompanied by a poem by Giovanni Battista Fonteo (1546-1580)
     explaining their allegorical meaning.
   location: Louvre, Paris
+  latitude: 48.86315
+  longitude: 2.329294
   image: {fileID: 21300000, guid: a5b2d47ca5a06354a9cbf2046c22dea0, type: 3}
   thumbnailSize: {x: 400, y: 400}
   thumbnailPosition: {x: 0, y: 0, z: 0}

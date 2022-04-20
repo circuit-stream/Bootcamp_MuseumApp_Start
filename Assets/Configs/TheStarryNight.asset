@@ -23,6 +23,8 @@ MonoBehaviour:
     through the Lillie P. Bliss Bequest. Widely regarded as Van Gogh's magnum opus,
     The Starry Night is one of the most recognized paintings in Western art."
   location: Louvre, Paris
+  latitude: 48.86315
+  longitude: 2.329294
   image: {fileID: 21300000, guid: c37f6b1aeaee0b64aa3be1276d67b9bc, type: 3}
   thumbnailSize: {x: 600, y: 400}
   thumbnailPosition: {x: 60, y: 60, z: 0}

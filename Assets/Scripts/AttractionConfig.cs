@@ -10,6 +10,8 @@ namespace MuseumApp
         public string author;
         public string description;
         public string location;
+        public float latitude;
+        public float longitude;
 
         public Sprite image;
 

@@ -22,6 +22,8 @@ MonoBehaviour:
     the aftermath of the wreck of the French naval frigate M\xE9duse, which ran aground
     off the coast of today's Mauritania on 2 July 1816."
   location: Louvre, Paris
+  latitude: 48.86315
+  longitude: 2.329294
   image: {fileID: 21300000, guid: eb3194875ba12394b996008c5f6e4410, type: 3}
   thumbnailSize: {x: 500, y: 400}
   thumbnailPosition: {x: 0, y: 0, z: 0}
