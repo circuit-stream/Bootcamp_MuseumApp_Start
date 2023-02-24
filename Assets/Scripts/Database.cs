@@ -93,5 +93,14 @@ public static class Database
         connection.DeleteAll<UserRating>();
     }
 
+    public static void DeleteUser(string username)
+    {
+        connection.Delete<User>(username);
+        connection.Query<UserRating>(
+               @$"DELETE FROM {nameof(UserRating)} WHERE
+                {nameof(UserRating.Username)} = '{username}'"
+           );
+    }
+
 
 }

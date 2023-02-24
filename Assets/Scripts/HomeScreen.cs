@@ -66,5 +66,18 @@ namespace MuseumApp
             // username.text = <NAME>;
             username.text = User.LoggedInUsername;
         }
+
+        public void DeleteUser()
+        {
+            if (!User.IsLoggedIn)
+            {
+                loginButton.SetActive(true);
+                username.gameObject.SetActive(false);
+                return;
+            }
+
+            Database.DeleteUser(User.LoggedInUsername);
+            LogOff();
+        }
     }
 }
