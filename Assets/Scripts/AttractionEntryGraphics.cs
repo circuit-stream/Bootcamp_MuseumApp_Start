@@ -35,12 +35,14 @@ namespace MuseumApp
 
             SetupThumbnail();
 
-            // TODO: StarsRatingLib.SetupStars
+            // StarsRatingLib.SetupStars
+            StarsRatingLib.SetUpStars(stars, attractionConfig.id);
         }
 
         public void Refresh()
         {
-            // TODO: StarsRatingLib.SetupStars
+            // StarsRatingLib.SetupStars
+            StarsRatingLib.SetUpStars(stars, attractionConfig.id);
         }
 
         private void SetupThumbnail()
