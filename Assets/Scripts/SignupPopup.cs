@@ -33,9 +33,9 @@ namespace MuseumApp
                 return;
 
             // Register player
-            Database.RegisterPlayer(usernameInput.text, passwordInput.text);
+            PlayfabController.Instance.RegisterPlayfabUser(usernameInput.text, passwordInput.text, OnPlayfabUserRegistered);
 
-            Login();
+            OnPlayfabLogin();
             ClosePopup();
         }
 
@@ -56,14 +56,20 @@ namespace MuseumApp
             else
             {
 
-                Login();
-                ClosePopup();
+                PlayfabController.Instance.LoginWithPlayfab(usernameInput.text, passwordInput.text, OnPlayfabLogin);
             }
         }
 
-        private void Login()
+        private void OnPlayfabUserRegistered()
+        {
+            Database.RegisterPlayer(usernameInput.text, passwordInput.text);
+            OnPlayfabLogin();
+        }
+
+        private void OnPlayfabLogin()
         {
             User.Login(usernameInput.text);
+            ClosePopup();
         }
 
         private void ClosePopup()
