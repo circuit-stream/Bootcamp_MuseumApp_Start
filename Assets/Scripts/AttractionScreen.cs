@@ -5,11 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 namespace MuseumApp
 {
     public class AttractionScreen : MonoBehaviour
     {
+        private static string weatherAPIEndpoint = "https://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&appid={2}";
+        private static string weatherAPIKey = "e185c6f8c32910f19e8f29f72864c618";
         [Serializable]
         public class WeatherIconEquivalency
         {
@@ -41,10 +44,19 @@ namespace MuseumApp
 
         public void OnClickStar(int index)
         {
-            // TODO: Check if user is logged in
-            // TODO: Create save user rating
+            // Check if user is logged in
+            if (!User.IsLoggedIn)
+            {
+                return;
+            }
+            // Create save user rating
+            var attractionID = attractionConfig.id;
 
-            StarsRatingLib.SetupStars(stars, index, true);
+            Database.Rate(attractionID, index);
+
+            StarsRatingLib.SetUpStars(stars, attractionID);
+
+            PlayfabController.Instance.OnAttractionRated(attractionID, index);
         }
 
         private void Start()
@@ -59,7 +71,12 @@ namespace MuseumApp
 
             SetupCover();
 
-            // TODO: StarsRatingLib.SetupStars
+            // StarsRatingLib.SetupStars
+            StarsRatingLib.SetUpStars(stars, attractionConfig.id);
+
+            // set weather
+            weatherIconImage.gameObject.SetActive(false);
+            StartCoroutine(SetWeatherIcon());
         }
 
         private void SetupCover()
@@ -69,6 +86,25 @@ namespace MuseumApp
             var rectTransform = cover.GetComponent<RectTransform>();
             rectTransform.anchoredPosition3D = attractionConfig.headerImagePosition;
             rectTransform.sizeDelta = attractionConfig.headerImageSize;
+        }
+
+        private IEnumerator SetWeatherIcon()
+        {
+            string url = string.Format(weatherAPIEndpoint, attractionConfig.latitude, attractionConfig.longitude, weatherAPIKey);
+            UnityWebRequest webRequest = UnityWebRequest.Get(url);
+
+            yield return webRequest.SendWebRequest();
+
+            if(webRequest.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("weather request network error!");
+                yield break;
+            }
+
+            WeatherData data = JsonUtility.FromJson<WeatherData>(webRequest.downloadHandler.text);
+            Debug.Log(webRequest.downloadHandler.text);
+            weatherIconImage.sprite = weatherIcons.Find(x => x.iconId == data.weather[0].icon).icon;
+            weatherIconImage.gameObject.SetActive(true);
         }
     }
 }

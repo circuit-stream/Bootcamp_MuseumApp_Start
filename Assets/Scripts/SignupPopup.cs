@@ -32,23 +32,44 @@ namespace MuseumApp
             if (!usernameValid || !passwordValid)
                 return;
 
-            // TODO: Register player
+            // Register player
+            PlayfabController.Instance.RegisterPlayfabUser(usernameInput.text, passwordInput.text, OnPlayfabUserRegistered);
 
-            Login();
+            OnPlayfabLogin();
             ClosePopup();
         }
 
         public void OnLoginClicked()
         {
-            // TODO: Check credentials
+            // Check credentials
+            var user = Database.GetUser(usernameInput.text);
+            if(user == null)
+            {
+                usernameHolderImage.color = wrongInputFieldColor;
+                passwordHolderImage.color = Color.white;
+            }
+            else if(user.Password != passwordInput.text)
+            {
+                usernameHolderImage.color = Color.white;
+                passwordHolderImage.color = wrongInputFieldColor;
+            }
+            else
+            {
 
-            Login();
-            ClosePopup();
+                PlayfabController.Instance.LoginWithPlayfab(usernameInput.text, passwordInput.text, OnPlayfabLogin);
+            }
         }
 
-        private void Login()
+        private void OnPlayfabUserRegistered()
         {
-            // TODO
+            Database.RegisterPlayer(usernameInput.text, passwordInput.text);
+            OnPlayfabLogin();
+        }
+
+        private void OnPlayfabLogin()
+        {
+            User.Login(usernameInput.text);
+            ClosePopup();
         }
 
         private void ClosePopup()

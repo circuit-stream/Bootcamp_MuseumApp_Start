@@ -16,6 +16,8 @@ namespace MuseumApp
 
         public AttractionScreenParameters screenParametersPrefab;
 
+        public string Id => attractionConfig.id;
+
         private AttractionConfig attractionConfig;
 
         public void OnClick()
@@ -35,12 +37,14 @@ namespace MuseumApp
 
             SetupThumbnail();
 
-            // TODO: StarsRatingLib.SetupStars
+            
         }
 
-        public void Refresh()
+        public void Refresh(bool isAttractionEnabled)
         {
-            // TODO: StarsRatingLib.SetupStars
+            // StarsRatingLib.SetupStars
+            StarsRatingLib.SetUpStars(stars, attractionConfig.id);
+            gameObject.SetActive(isAttractionEnabled);
         }
 
         private void SetupThumbnail()
