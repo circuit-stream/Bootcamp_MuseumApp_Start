@@ -70,6 +70,20 @@ public class PlayfabController
             error => OnPlayfabFailure(error, "LoginWithEmailAddress"));
     }
 
+    public void OnAttractionRated(string attractionID, int rating)
+    {
+        PlayFabClientAPI.WritePlayerEvent(new WriteClientPlayerEventRequest()
+        {
+            Body = new Dictionary<string, object>(){
+                {"Attraction", attractionID },
+                {"Rating", rating }
+            },
+            EventName = "User"
+        },
+        result => Debug.Log("Success"),
+        error => Debug.LogError(error.GenerateErrorReport()));
+    }
+
     private void OnRegister(RegisterPlayFabUserResult result, Action callback)
     {
         Debug.Log($"Registered new user: {result.PlayFabId}");

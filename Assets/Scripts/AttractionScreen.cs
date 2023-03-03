@@ -55,6 +55,8 @@ namespace MuseumApp
             Database.Rate(attractionID, index);
 
             StarsRatingLib.SetUpStars(stars, attractionID);
+
+            PlayfabController.Instance.OnAttractionRated(attractionID, index);
         }
 
         private void Start()
